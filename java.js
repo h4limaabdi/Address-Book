@@ -26,3 +26,16 @@ function displayContacts() {
     outputDiv.appendChild(p);
   });
 }
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const firstNameValue = firstNameInput.value.trim();
+  const lastNameValue = lastNameInput.value.trim();
+  const phoneValue = phoneInput.value.trim();
+
+  if (firstNameValue && lastNameValue && phoneValue) {
+    addContact(firstNameValue, lastNameValue, phoneValue);
+    form.reset();
+  }
+});
