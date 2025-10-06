@@ -17,3 +17,12 @@ function addContact(firstName, lastName, phoneNumber){
     addressBook.push(contact);
     displayContacts();
 }
+
+function displayContacts() {
+  outputDiv.innerHTML = '';
+  addressBook.forEach((contact, index) => {
+    const p = document.createElement('p');
+    p.textContent = `${index + 1}. ${contact.firstName} ${contact.lastName} — ${contact.phoneNumber}`;
+    outputDiv.appendChild(p);
+  });
+}
